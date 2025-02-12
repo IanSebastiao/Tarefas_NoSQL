@@ -43,7 +43,8 @@ class _EditarTarefasPageState extends State<EditarTarefasPage> {
         dataFim: dataFimController.text,
       );
 
-      await _viewModel.updateTarefa(tarefaAtualizada); // Atualiza a tarefa
+      await _viewModel.updateTarefa(
+          widget.tarefa.id.toString(), tarefaAtualizada); // Atualiza a tarefa
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
