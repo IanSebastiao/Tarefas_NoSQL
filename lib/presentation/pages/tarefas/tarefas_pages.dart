@@ -42,7 +42,8 @@ class _TarefasPagesState extends State<TarefasPages> {
 
       if (dataInicio.isAfter(now)) {
         tarefa.status = 'Pendente';
-      } else if (dataInicio.isAtSameMomentAs(now) || (dataInicio.isBefore(now) && dataFim.isAfter(now))) {
+      } else if (dataInicio.isAtSameMomentAs(now) ||
+          (dataInicio.isBefore(now) && dataFim.isAfter(now))) {
         tarefa.status = 'Em andamento';
       } else if (dataFim.isBefore(now)) {
         tarefa.status = 'Concluído';
@@ -57,7 +58,9 @@ class _TarefasPagesState extends State<TarefasPages> {
         // A ordem desejada é "Pendente", "Em andamento", "Concluído"
         List<String> statusOrder = ['Pendente', 'Em andamento', 'Concluído'];
         // Primeiro ordena pelo status
-        int statusComparison = statusOrder.indexOf(a.status!).compareTo(statusOrder.indexOf(b.status!));
+        int statusComparison = statusOrder
+            .indexOf(a.status!)
+            .compareTo(statusOrder.indexOf(b.status!));
         // Se o status for igual, ordena pelo nome alfabeticamente
         if (statusComparison != 0) {
           return statusComparison;
@@ -68,7 +71,7 @@ class _TarefasPagesState extends State<TarefasPages> {
   }
 
   Future<void> _deleteTarefa(Tarefa tarefa) async {
-    await _viewModel.deleteTarefa(tarefa.id);
+    await _viewModel.deleteTarefa(tarefa.id as String);
     _lastDeletedTarefa = tarefa;
 
     final snackBar = SnackBar(
@@ -78,7 +81,8 @@ class _TarefasPagesState extends State<TarefasPages> {
         onPressed: () {
           if (_lastDeletedTarefa != null && mounted) {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text('Desfeta a exclusão de ${_lastDeletedTarefa!.nome}'),
+              content:
+                  Text('Desfeta a exclusão de ${_lastDeletedTarefa!.nome}'),
             ));
             _viewModel.addTarefa(_lastDeletedTarefa!);
             setState(() {
@@ -197,7 +201,8 @@ class _TarefasPagesState extends State<TarefasPages> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => EditarTarefasPage(tarefa: tarefa),
+                                  builder: (context) =>
+                                      EditarTarefasPage(tarefa: tarefa),
                                 ),
                               ).then((_) => _loadTarefa());
                             },
