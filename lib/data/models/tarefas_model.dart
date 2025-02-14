@@ -12,7 +12,7 @@ class Tarefa {
     this.id,
     required this.nome,
     this.descricao,
-    this.status,
+    // this.status,
     required this.dataInicio,
     required this.dataFim,
   });
@@ -23,9 +23,9 @@ class Tarefa {
       id: map['id'],
       nome: map['nome'],
       descricao: map['descricao'],
-      status: map['status'],
-      dataInicio: map['data_inicio'],
-      dataFim: map['data_fim'],
+      // status: map['status'],
+      dataInicio: map['dataInicio'],
+      dataFim: map['dataFim'],
     );
   }
 
@@ -35,9 +35,9 @@ class Tarefa {
       'id': id,
       'nome': nome,
       'descricao': descricao,
-      'status': status,
-      'data_inicio': dataInicio,
-      'data_fim': dataFim,
+      // 'status': status,
+      'dataInicio': dataInicio,
+      'dataFim': dataFim,
     };
   }
 }

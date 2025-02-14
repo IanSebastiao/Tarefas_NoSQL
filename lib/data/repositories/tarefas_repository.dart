@@ -13,10 +13,8 @@ class TarefasRepository {
         await DatabaseHelper.getDocuments(collection);
     return tarefaMaps.map((map) {
       return Tarefa(
-        id: map['id'], // O Firestore gera um ID string
         nome: map['nome'],
         descricao: map['descricao'] ?? '',
-        status: map['status'] ?? '',
         dataInicio: map['dataInicio'],
         dataFim: map['dataFim'],
       );

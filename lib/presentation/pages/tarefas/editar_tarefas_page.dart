@@ -38,7 +38,7 @@ class _EditarTarefasPageState extends State<EditarTarefasPage> {
         id: widget.tarefa.id, // Mantém o id da tarefa original
         nome: nomeController.text,
         descricao: descricaoController.text,
-        status: widget.tarefa.status, // Mantém o status atual da tarefa
+        // status: widget.tarefa.status, // Mantém o status atual da tarefa
         dataInicio: dataInicioController.text,
         dataFim: dataFimController.text,
       );

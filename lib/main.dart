@@ -1,6 +1,7 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
+import 'package:tarefas/firebase_options.dart';
 import 'package:tarefas/presentation/pages/sprash_screen.dart';
 import 'presentation/pages/home_page.dart'; // Certifique-se de que o ThemeProvider está no caminho correto.
 
@@ -8,8 +9,15 @@ import 'presentation/pages/home_page.dart'; // Certifique-se de que o ThemeProvi
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(const MyApp());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
