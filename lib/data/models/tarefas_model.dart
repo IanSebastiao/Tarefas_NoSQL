@@ -20,7 +20,7 @@ class Tarefa {
   // Converte um Map (do banco de dados) para um objeto Task
   factory Tarefa.fromMap(Map<String, dynamic> map) {
     return Tarefa(
-      id: map['id'],
+      // id: map['id'],
       nome: map['nome'],
       descricao: map['descricao'],
       // status: map['status'],
@@ -32,7 +32,7 @@ class Tarefa {
   // Converte um objeto Task para um Map (usado para inserção/atualização no banco de dados)
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
+      // 'id': id,
       'nome': nome,
       'descricao': descricao,
       // 'status': status,
