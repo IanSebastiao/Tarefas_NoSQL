@@ -171,7 +171,7 @@ class _TarefasPagesState extends State<TarefasPages> {
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Descrição: ${tarefa.descricao}'),
+                          Text('Descrição: ${tarefa.id.toString()}'),
                           const SizedBox(height: 4),
                           Text(
                             'Data Início: ${formatDate(tarefa.dataInicio)}',

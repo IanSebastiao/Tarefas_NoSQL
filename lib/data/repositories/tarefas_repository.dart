@@ -13,6 +13,7 @@ class TarefasRepository {
         await DatabaseHelper.getDocuments(collection);
     return tarefaMaps.map((map) {
       return Tarefa(
+        id: map['id'],
         nome: map['nome'],
         descricao: map['descricao'] ?? '',
         dataInicio: map['dataInicio'],

@@ -12,22 +12,22 @@ class Tarefa {
     this.id,
     required this.nome,
     this.descricao,
-    // this.status,
+    this.status,
     required this.dataInicio,
     required this.dataFim,
   });
 
   // Converte um Map (do banco de dados) para um objeto Task
-  factory Tarefa.fromMap(Map<String, dynamic> map) {
-    return Tarefa(
-      // id: map['id'],
-      nome: map['nome'],
-      descricao: map['descricao'],
-      // status: map['status'],
-      dataInicio: map['dataInicio'],
-      dataFim: map['dataFim'],
-    );
-  }
+  // factory Tarefa.fromMap(Map<String, dynamic> map) {
+  //   return Tarefa(
+  //     id: map['id'],
+  //     nome: map['nome'],
+  //     descricao: map['descricao'],
+  //     // status: map['status'],
+  //     dataInicio: map['dataInicio'],
+  //     dataFim: map['dataFim'],
+  //   );
+  // }
 
   // Converte um objeto Task para um Map (usado para inserção/atualização no banco de dados)
   Map<String, dynamic> toMap() {
